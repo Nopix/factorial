@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Factorial {
 	public static double factorial(double numero) {
-		if (numero == 0){
+		if (numero == 0) {
 			return 1;
 		} else {
 			double resultat = numero * factorial(numero - 1);
@@ -10,11 +10,15 @@ public class Factorial {
 		}
 	}
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Introduzca un valor entre 0 y 170: ");
 		int num = scan.nextInt();
-		System.out.println(factorial(num));
+		if (num < 0 || num > 170) {
+			System.out.println("El número introducido tiene que ser entre 0 y 170");
+		} else {
+			System.out.println(factorial(num));
+		}
 		scan.close();
 	}
 }
